@@ -111,10 +111,78 @@ public class Boby_FormMain extends JFrame {
     }
 
     private void konversiButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        
+        if(!(suhuAwal.equals(""))) {
+            if(suhuCombo1.getSelectedItem().equals("Celcius")) {
+                CelciusConversion();
+            } else if(suhuCombo1.getSelectedItem().equals("Kelvin")) {
+                KelvinConversion();
+            } else if(suhuCombo1.getSelectedItem().equals("Reamur")) {
+                ReamurConversion();
+            } else if(suhuCombo1.getSelectedItem().equals("Fahrenheit")) {
+                FahrenheitConversion();
+            }
+        }
     }
 
     private void linkLogoutMouseClicked(java.awt.event.MouseEvent evt) {
+        this.setVisible(false);
+        new Boby_FormLogin().setVisible(true);
+    }
+
+    private void CelciusConversion() {
+        if(suhuCombo2.getSelectedItem().equals("Celcius")) {
+            suhu = Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Reamur")) {
+            suhu = (4 / 5) * Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Kelvin")) {
+            suhu = 273 + Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Fahrenheit")) {
+            suhu = (9 / 5) * Double.parseDouble(suhuAwal.getText()) + 32;
+        }
+        
+        suhuKonversi.setText(""+suhu);
+    }
+    
+    private void KelvinConversion() {
+        if(suhuCombo2.getSelectedItem().equals("Celcius")) {
+            suhu = Double.parseDouble(suhuAwal.getText()) - 273;
+        } else if(suhuCombo2.getSelectedItem().equals("Reamur")) {
+            suhu = (4 / 5) * (Double.parseDouble(suhuAwal.getText()) - 273);
+        } else if(suhuCombo2.getSelectedItem().equals("Kelvin")) {
+            suhu = Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Fahrenheit")) {
+            suhu = (9 / 5) * (Double.parseDouble(suhuAwal.getText()) - 273) + 32;
+        }
+        
+        suhuKonversi.setText(""+suhu);
+    }
+    
+    private void ReamurConversion() {
+        if(suhuCombo2.getSelectedItem().equals("Celcius")) {
+            suhu = (5 / 4) * Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Reamur")) {
+            suhu = Double.parseDouble(suhuAwal.getText());
+        } else if(suhuCombo2.getSelectedItem().equals("Kelvin")) {
+            suhu = (5 / 4) * Double.parseDouble(suhuAwal.getText()) + 273;
+        } else if(suhuCombo2.getSelectedItem().equals("Fahrenheit")) {
+            suhu = (9 / 4) * Double.parseDouble(suhuAwal.getText()) + 32;
+        }
+        
+        suhuKonversi.setText(""+suhu);
+    }
+    
+    private void FahrenheitConversion() {
+        if(suhuCombo2.getSelectedItem().equals("Celcius")) {
+            suhu = (5 / 9) * (Double.parseDouble(suhuAwal.getText()) - 32);
+        } else if(suhuCombo2.getSelectedItem().equals("Reamur")) {
+            suhu = (4 / 9) * (Double.parseDouble(suhuAwal.getText()) - 32);
+        } else if(suhuCombo2.getSelectedItem().equals("Kelvin")) {
+            suhu = (5 / 9) * (Double.parseDouble(suhuAwal.getText()) - 32) + 273;
+        } else if(suhuCombo2.getSelectedItem().equals("Fahrenheit")) {
+            suhu = Double.parseDouble(suhuAwal.getText());
+        }
+        
+        suhuKonversi.setText(""+suhu);
     }
     
     public static void main(String args[]) {
