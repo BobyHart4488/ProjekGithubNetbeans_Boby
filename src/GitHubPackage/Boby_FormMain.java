@@ -9,7 +9,7 @@ public class Boby_FormMain extends JFrame {
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
-        setTitle("Temperature Conversion - Boby");
+        setTitle("Konversi Suhu - Boby");
         setLocation(590,200);
         jLabel2 = new JLabel();
         suhuCombo1 = new JComboBox<>();
@@ -23,16 +23,16 @@ public class Boby_FormMain extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 60));
-        jLabel2.setText("Konversi Suhu");
+        jLabel2.setText("Temperature Conversion");
 
         suhuCombo1.setFont(new java.awt.Font("Century Gothic", 0, 24));
-        suhuCombo1.setModel(new DefaultComboBoxModel<>(new String[] { "Pilih Suhu 1", "Celcius", "Fahrenheit", "Reamur", "Kelvin" }));
+        suhuCombo1.setModel(new DefaultComboBoxModel<>(new String[] { "Suhu 1", "Celcius", "Fahrenheit", "Reamur", "Kelvin" }));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24));
         jLabel3.setText(">");
 
         suhuCombo2.setFont(new java.awt.Font("Century Gothic", 0, 24));
-        suhuCombo2.setModel(new DefaultComboBoxModel<>(new String[] { "Pilih Suhu 2", "Celcius", "Fahrenheit", "Reamur", "Kelvin" }));
+        suhuCombo2.setModel(new DefaultComboBoxModel<>(new String[] { "Suhu 2", "Celcius", "Fahrenheit", "Reamur", "Kelvin" }));
 
         suhuKonversi.setFont(new java.awt.Font("Century Gothic", 0, 36));
 
